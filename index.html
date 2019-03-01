@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>还款计算器</title>
+    <style type="text/css">
+        div {margin-left: 20%;
+        .input {border: 1px solid #ccc;
+            border-radius: 2px;
+            color: #000;
+            font-family: 'Opan Sans',sans-serif;
+            font-size: 1em;
+            height: 50px;
+            padding: 0 16px;
+            transition: background 0.3s ease-in-out;
+            width: 100%;};
+    </style>
+    <script>
+        function show() {
+            var money = document.getElementById("money").value * 10000;
+            var rate = document.getElementById("rate").value / 100;
+            var month = document.getElementById("month").value;
+            var benxi = (
+                (money * rate * (1 + rate) ** month) /
+                (Math.pow(1 + rate, month) - 1)
+            ).toFixed(2);
+            var rate_jt = (((benxi - money / month) / money) * 100).toFixed(2);
+            document.getElementById("benxi").innerHTML = benxi;
+            document.getElementById("rate_jt").innerHTML = rate_jt;
+        }
+    </script>
+</head>
+
+<body>
+<p>
+    <img src=" youcashlogo.png" style="vertical-align:-webkit-baseline-middle;max-width: 100%;">
+</p>
+<div>
+    <b>
+        <p>1.请输入贷款金额（万）：</p>
+    </b>
+    <input type="number" id="money" name="box" value="10" style="font-size: 20px;width:200px"/>
+    <b>
+        <p>2.请输入月利率（%）：</p>
+    </b>
+    <input type="number" id="rate" value="1.5" style="font-size: 20px;width:200px"/>
+    <b>
+        <p>3.请输入贷款期限（月）：</p>
+    </b>
+    <input type="number" id="month" value="36" style="font-size: 20px;width:200px"/>
+    <p></p>
+    <b><button onclick="show()" style="width: 156px;height: 40px;margin-left:8%;border-radius: 3px;background: #1E90FF;outline: none;font-family: Microsoft YaHei;color: white;" >提交</button></b>
+    <b>
+        <p>您月还款金额为：<b><span style="color:red" id="benxi"></b></span><span>元</span></p>
+    </b>
+    <b>
+        <p>您月均摊利率为：<b><span style="color:red" id="rate_jt"></span></b><span>%</span></p>
+    </b>
+</div>
+</body>
+
+</html>
