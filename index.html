@@ -7,16 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>还款计算器</title>
     <style type="text/css">
-        div {margin-left: 20%;
-        .input {border: 1px solid #ccc;
-            border-radius: 2px;
-            color: #000;
-            font-family: 'Opan Sans',sans-serif;
-            font-size: 1em;
-            height: 50px;
-            padding: 0 16px;
-            transition: background 0.3s ease-in-out;
-            width: 100%;};
+        #picture {
+            margin: 0 auto;
+        }
+        span {
+            font-size: 18px;
+            font-family: Microsoft YaHei;
+        }
+        button  {
+            text-align: center;
+            width: 150px;
+            height: 40px;
+            margin: 0 auto;
+            border-radius: 1px;
+            background: #1E90FF;
+            outline: none;
+            font-family: Microsoft YaHei;
+            color: white;
+            font-size: 20px;
+        }
+        .text {
+            padding-left: 80px;
+            padding-right: 50px;
+        }
     </style>
     <script>
         function show() {
@@ -35,26 +48,34 @@
 </head>
 
 <body>
-<p>
-    <img src=" youcashlogo.png" style="vertical-align:-webkit-baseline-middle;max-width: 100%;">
-</p>
-<div>
+<div id="picture" style="text-align: center">
+    <img src=" 中邮消费金融logo小.png" style="vertical-align:middle;width: 60%;height: auto;">
+    <b><span> | 还款计算器</span></b>
+</div>
+<hr>
+<div class="text">
     <b>
         <p>1.请输入贷款金额（万）：</p>
     </b>
-    <input type="number" id="money" name="box" value="10" style="font-size: 20px;width:200px"/>
+    <input type="number" id="money" name="box" value="10" style="font-size: 20px; width: 150px;"/>
+</div>
+<div class="text">
     <b>
         <p>2.请输入月利率（%）：</p>
     </b>
-    <input type="number" id="rate" value="1.5" style="font-size: 20px;width:200px"/>
+    <input type="number" id="rate" value="1.5" style="font-size: 20px;width: 150px;"/>
+</div>
+<div class="text">
     <b>
         <p>3.请输入贷款期限（月）：</p>
     </b>
-    <input type="number" id="month" value="36" style="font-size: 20px;width:200px"/>
+    <input type="number" id="month" value="36" style="font-size: 20px;width: 150px;"/>
     <p></p>
-    <b><button onclick="show()" style="width: 156px;height: 40px;margin-left:8%;border-radius: 3px;background: #1E90FF;outline: none;font-family: Microsoft YaHei;color: white;" >提交</button></b>
+</div>
+<div class="text">
+    <b><button onclick="show()" style="" >提交</button></b>
     <b>
-        <p>您月还款金额为：<b><span style="color:red" id="benxi"></b></span><span>元</span></p>
+        <p>您月还款金额为：<b><span style="color:red" id="benxi"></span></b><span>元</span></p>
     </b>
     <b>
         <p>您月均摊利率为：<b><span style="color:red" id="rate_jt"></span></b><span>%</span></p>
