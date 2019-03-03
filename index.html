@@ -10,13 +10,13 @@
         #picture {
             margin: 0 auto;
         }
-        span {
+        #picture > span {
             font-size: 15px;
             font-family: Microsoft YaHei;
         }
         button  {
             text-align: center;
-            width: 150px;
+            min-width: 100%;
             height: 40px;
             margin: 0 auto;
             border-radius: 1px;
@@ -28,12 +28,14 @@
         }
         .text {
             width: auto;
-            padding-left: 80px;
-            padding-right: 80px;
         }
         input {
+            BORDER-TOP-STYLE: none;
+            BORDER-RIGHT-STYLE: none;
+            BORDER-LEFT-STYLE: none;
+            BORDER-BOTTOM-STYLE: solid;
             font-size: 20px;
-            width: 150px;
+            min-width: 80%;
         }
     </style>
     <script>
@@ -62,7 +64,7 @@
     <b>
         <p>1.请输入贷款金额（万）：</p>
     </b>
-    <input type="number" id="money" name="box" value="10"/>
+    <input type="number" id="money" name="box" value="10" style=""/>
 </div>
 <div class="text">
     <b>
