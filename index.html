@@ -27,8 +27,13 @@
             font-size: 20px;
         }
         .text {
+            width: auto;
             padding-left: 80px;
-            padding-right: 50px;
+            padding-right: 80px;
+        }
+        input {
+            font-size: 20px;
+            width: 150px;
         }
     </style>
     <script>
@@ -41,15 +46,15 @@
                 (Math.pow(1 + rate, month) - 1)
             ).toFixed(2);
             var rate_jt = (((benxi - money / month) / money) * 100).toFixed(2);
-            document.getElementById("benxi").innerHTML = benxi;
-            document.getElementById("rate_jt").innerHTML = rate_jt;
+            document.getElementById("benxi").value = benxi;
+            document.getElementById("rate_jt").value = rate_jt;
         }
     </script>
 </head>
 
 <body>
 <div id="picture" style="text-align: center">
-    <img src=" psbccf.png" style="vertical-align:middle;width: 60%;height: auto;">
+    <img src=" 中邮消费金融logo小.png" style="vertical-align:middle;width: 60%;height: auto;">
     <b><span> | 还款计算器</span></b>
 </div>
 <hr>
@@ -57,28 +62,36 @@
     <b>
         <p>1.请输入贷款金额（万）：</p>
     </b>
-    <input type="number" id="money" name="box" value="10" style="font-size: 20px; width: 150px;"/>
+    <input type="number" id="money" name="box" value="10"/>
 </div>
 <div class="text">
     <b>
         <p>2.请输入月利率（%）：</p>
     </b>
-    <input type="number" id="rate" value="1.5" style="font-size: 20px;width: 150px;"/>
+    <input type="number" id="rate" value="1.5" />
 </div>
 <div class="text">
     <b>
         <p>3.请输入贷款期限（月）：</p>
     </b>
-    <input type="number" id="month" value="36" style="font-size: 20px;width: 150px;"/>
+    <input type="number" id="month" value="36" />
     <p></p>
 </div>
 <div class="text">
     <b><button onclick="show()" style="" >提交</button></b>
+</div>
+<div class="text">
     <b>
-        <p>您月还款金额为：<b><span style="color:red" id="benxi"></span></b><span>元</span></p>
+        <p>您月还款金额为：</p>
     </b>
     <b>
-        <p>您月均摊利率为：<b><span style="color:red" id="rate_jt"></span></b><span>%</span></p>
+        <p><input style="color:red;text-align: right" id="benxi"><span>元</span></p>
+    </b>
+    <b>
+        <p>您月均摊利率为：</p>
+    </b>
+    <b>
+        <input style="color:red;text-align: right" id="rate_jt"><span>%</span>
     </b>
 </div>
 </body>
