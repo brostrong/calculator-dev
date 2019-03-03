@@ -18,25 +18,28 @@
             text-align: center;
             min-width: 100%;
             height: 40px;
-            margin: 0 auto;
-            border-radius: 1px;
+            border-radius: 10px;
             background: #1E90FF;
             outline: none;
             font-family: Microsoft YaHei;
             color: white;
             font-size: 20px;
         }
-        .text {
-            width: auto;
-        }
-        input {
+        .input_text {
             BORDER-TOP-STYLE: none;
             BORDER-RIGHT-STYLE: none;
             BORDER-LEFT-STYLE: none;
             BORDER-BOTTOM-STYLE: solid;
             font-size: 20px;
-            min-width: 80%;
+            width: 50%;
+            height: 50px;
         }
+        .input_title {
+            border: none;
+            font-size: 20px;
+            width: 50%;
+            height: 50px;
+          }
     </style>
     <script>
         function show() {
@@ -61,40 +64,18 @@
 </div>
 <hr>
 <div class="text">
-    <b>
-        <p>1.请输入贷款金额（万）：</p>
-    </b>
-    <input type="number" id="money" name="box" value="10" style=""/>
-</div>
-<div class="text">
-    <b>
-        <p>2.请输入月利率（%）：</p>
-    </b>
-    <input type="number" id="rate" value="1.5" />
-</div>
-<div class="text">
-    <b>
-        <p>3.请输入贷款期限（月）：</p>
-    </b>
-    <input type="number" id="month" value="36" />
     <p></p>
-</div>
-<div class="text">
+    <input class="input_title" readonly="readonly" value="1.贷款金额（万）："><input class="input_text" type="number" id="money" value="10" />
+    <p></p>
+    <input class="input_title" readonly="readonly" value="2.月利率（%）："><input class="input_text" id="rate" value="1.5" />
+    <p></p>
+    <input class="input_title" readonly="readonly" value="3.贷款期限（月）："/><input class="input_text" id="month" value="36" />
+    <p></p>
     <b><button onclick="show()" style="" >提交</button></b>
-</div>
-<div class="text">
-    <b>
-        <p>您月还款金额为：</p>
-    </b>
-    <b>
-        <p><input style="color:red;text-align: right" id="benxi"><span>元</span></p>
-    </b>
-    <b>
-        <p>您月均摊利率为：</p>
-    </b>
-    <b>
-        <input style="color:red;text-align: right" id="rate_jt"><span>%</span>
-    </b>
+    <p></p>
+    <input class="input_title" readonly="readonly" value="每月还款金额（元）："><input class="input_text" style="color:red;" id="benxi">
+    <p></p>
+    <input class="input_title" readonly="readonly" value="月均摊利率为（%）"><input class="input_text" style="color:red;" id="rate_jt">
 </div>
 </body>
 
