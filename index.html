@@ -53,8 +53,10 @@
                 (money * rate * (1 + rate) ** month) /
                 (Math.pow(1 + rate, month) - 1)
             ).toFixed(2);
+            var interest = (benxi - (money/month)).toFixed(2);
             var rate_jt = (((benxi - money / month) / money) * 100).toFixed(2);
             document.getElementById("benxi").value = benxi;
+            document.getElementById("interest").value = interest;
             document.getElementById("rate_jt").value = rate_jt;
         }
     </script>
@@ -77,6 +79,8 @@
     <b><button onclick="show()" style="" >提 交</button></b>
     <p></p>
     <input class="input_title" readonly="readonly" value="每月还款金额（元）："><input class="input_text" style="color:red;" id="benxi">
+    <p></p>
+    <input class="input_title" readonly="readonly" value="月均摊利息为（元）："><input class="input_text" style="color:red;" id="interest">
     <p></p>
     <input class="input_title" readonly="readonly" value="月均摊利率为（%）"><input class="input_text" style="color:red;" id="rate_jt">
 </div>
